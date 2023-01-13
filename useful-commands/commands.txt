@@ -1,0 +1,71 @@
+- (Optional) Add the $HOME/bin path to your shell initialization file so that it is configured when you open a shell.
+
+```bash
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+```
+
+export PS1="\[\e[1;34m\]\u\[\e[33m\]@\h# \W:\[\e[32m\]\\$\[\e[m\] "
+
+- Alternatively you can clone some part of your repository as show below:
+
+```shell
+sudo yum install git -y
+mkdir repo && cd repo
+git init
+git remote add origin <origin-url>
+git config core.sparseCheckout true
+echo "subdirectory/under/repo/" >> .git/info/sparse-checkout  # do not put the repository folder name in the beginning
+git pull origin <branch-name>
+```
+* Install Helm [version 3+](https://github.com/helm/helm/releases) on Jenkins Server. [Introduction to Helm](https://helm.sh/docs/intro/). [Helm Installation](https://helm.sh/docs/intro/install/).
+
+```bash
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+helm version
+```
+***yaml file olusturmanin kisa ve kullanisli yolu
+
+kubectl create deployment mydeploy --image=nginx --dry-run=client -o yaml > mydeploy.yaml
+
+- Install the helm-push plugin. Firstly check the helm plugins.
+
+```
+helm plugin ls
+helm plugin install https://github.com/chartmuseum/helm-push.git
+```
+- Copy your pem file to the Control Node. First, go to your pem file directory on your local PC and run the following command.
+
+```bash
+$ scp -i <pem file> <pem file> ec2-user@<public DNS name of Control Node>:/home/ec2-user
+```
+
+df=report disk space usage, -h=human readable
+---------------------------------
+-** diyelim  kube-worker-1'i bakıma alacağız.
+kubectl cordon kube-worker-1
+** komutuyla worker’ı cordon yaptık(describe yapınca taint kısmında /unschedulable:NoSchedule göreceğiz)
+** bu şekilde artık bu node’un üzerine plan yapma diyoruz.
+** k get node --> bu şekilde de görebiliriz SchedulingDisabled
+**k get po -o wide  --> bütün nodeların kube-master’da oluştuğunu gördük
+kubectl uncordon kube-worker-1
+** k get node --> uncordon yapıldığını teyit ettik.
+** replicası 18'e çıkartıp yeniden apply edersek son oluşan 3 pod’un bu sefer worker’da oluştuğunu görürüz.
+------------------
+** kubectl -- help
+drain-> drain node in preparation for maintenance (bakım için node’un içini boşaltma - gracefully terminate)
+drain (tahliye etmek, boşaltmak, drenaj kullanıyoruz türkçede)
+** drain komutu node’ları hassas bir şekilde boşaltır. Pod’ları yeni bir node’a aktarır ki bakım yapabilelim.
+** drain komutu aynı zamanda cordon’da yapar, daha doğrusu önce cordoned haline getirir sonra drain yapar
+kubectl drain kube-master --ignore-daemonsets
+** daemon set haric tüm pod’ları sildiğini göreceğiz,
+evict (evden çıkarmak, tahliye etmek anlamına gelir)
+** Sertifika ve interview sorusu
+==> Kubernetes’de podlarınız var ve bakım yapmak istiyorsunuz, nasıl yaparsanız ?
+Cevap-- Cordan komutuyla planlamayı keserim, drain komutuyla node’u tahliye eder ve uygun node’lara gönderirim.
+------------------------------------
+---- Docker Permission ----
+sudo  usermod -a -G docker ec2-user
+
+newgrp docker
+-----
+
