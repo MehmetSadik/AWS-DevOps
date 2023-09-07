@@ -1,0 +1,41 @@
+image:
+  name: docker-repo.fdmg.org/terraform
+
+before_script:
+  - terraform init
+
+stages:
+  - plan
+  - apply
+
+validate:
+  stage: validate
+  variables:
+    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+  script:
+    - terraform workspace select test
+    - terraform validate
+
+plan-ota:
+  tags:
+    - kube-runner
+  stage: plan
+  variables:
+    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY  
+  script:
+    - terraform workspace select test
+    - terraform plan
+
+
+apply-ota:
+  tags:
+    - kube-runner
+  stage: apply
+  variables:
+    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+  script:
+    - terraform workspace select test
+    - terraform apply
