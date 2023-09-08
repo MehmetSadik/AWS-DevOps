@@ -59,6 +59,16 @@ data "terraform_remote_state" "datadog_config" {
   workspace = "default"
 }
 
+data "terraform_remote_state" "datadog_config-2" {
+  backend = "s3"
+  config = {
+    bucket = "datadog-config-terraform-state"
+    key    = "datadog-config-terraform-state"
+    region = "eu-west-1"
+  }
+  workspace = "default"
+}
+
 data "aws_iam_policy_document" "datadog_aws_integration_assume_role" {
   statement {
     actions = ["sts:AssumeRole"]
