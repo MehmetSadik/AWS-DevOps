@@ -43,8 +43,8 @@ locals {
   environment  = terraform.workspace
   cluster-name = "${terraform.workspace}-cluster"
   external_id = {
-    "production"  = "production_external_id"
-    "development" = "development_external_id"
+    "prod"  = "production_external_id"
+    "dev" = "development_external_id"
     "test"        = "test_external_id"
     }
 }
@@ -58,6 +58,7 @@ data "terraform_remote_state" "datadog_config" {
   }
   workspace = "default"
 }
+
 
 data "aws_iam_policy_document" "datadog_aws_integration_assume_role" {
   statement {
