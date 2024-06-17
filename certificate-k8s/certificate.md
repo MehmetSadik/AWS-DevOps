@@ -135,3 +135,8 @@ check -->
   - https://www.itexams.com/exam/CKA
   - https://www.youtube.com/watch?v=o_7jlMBHFFA
   - https://www.youtube.com/watch?v=udA3OWkmMUY
+
+
+NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
+
+     Soru 6'da kaldim.
