@@ -135,6 +135,3 @@ check -->
   - https://www.itexams.com/exam/CKA
   - https://www.youtube.com/watch?v=o_7jlMBHFFA
   - https://www.youtube.com/watch?v=udA3OWkmMUY
-
-
-test ssh key
