@@ -137,6 +137,57 @@ check -->
   - https://www.youtube.com/watch?v=udA3OWkmMUY
 
 
+17. pv, pvc ve deployment olustur
+    PV ve PVC icin dogrudan dokumana Persistent Volumes yazabiliriz.
+    https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/ --> bu sitede tum bilgiler var.
+    Bunun icin bir kac tekrar daha yap, basit ama uzun suruyor
+
+!!! ONEMLI !!!
+
+Kubernetes/Documentation/Tasks altinda bicok faydali pratik bilgiler yer aliyor
+
+18. Soru 7 
+   kubectl top -h
+   kubectl top pod --container=true --> bu sekilde containerlari da gorebiliyoruz.
+
+19. Soru 8
+    Oncelikle bu soru ezberlenebilir.
+    /usr/lib/systemd calisanlar process oluyor --> kubeadm
+    /etc/kubernetes/manifests/ --> altinda yer alan podlar `static-pod` olarak adlandiriliyor, dogrudan kubelet tarafindan yonetiliyor.
+    coredns deployment tarafindan olusturuldugu icin normal `pod` oluyor
+
+    kubelet: process
+    kube-apiserver: static-pod
+    kube-scheduler: static-pod
+    kube-controller-manager: static-pod
+    etcd: static-pod
+    dns: pod coredns
+
+20. soru 9 - Kill Scheduler
+    `mv` komutu ile /etc/kubernetes/manifests/ dizini altindaki kube-scheduler.yaml'i bir ust klasoru tasiyabilirsin.
+  
+21. soru 10 - RBAC ServiceAccount Role RoleBinding
+    `kubernetes/Reference/Command line tool(kubectl)/kubectl reference` dizini altinda cok kullanisli komutlar var buradan faydalanilarak yapilabilir.
+
+22. soru 11 - DaemonSet on all Nodes
+    !!! ONEMLI !!!
+
+    `kubernetes/Documentation/Concepts/Workloads/Workload Management` kismindan bulunabilir ya da `k create deployment ...` komutu ile olusturulup turu degistirilip replica kaldirilarak olusturulabilir.
+
+    buradan diger kaynaklarin da (deployment, statefulset, job, cronjob vs) orneklerine ulasilabilir.
+
+23. soru 12 - Deployment on all Nodes
+    Soruyu iyi anla, sonuc olarak `podAntiAffinity` rule kullanman gerekiyor.
+
+24. soru 13 - Multi Containers and Pod shared Volume
+
+    emptyDir veya benzer geçici hacim türleri bu tür senaryolarda kullanılır. Buradaki volume onemli, persistent degil gecici volume.
+    environment variable icin MY_NODE_NAME ifadesini dokumatasyonda aratince cikiyor
+
+
+
 NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
 
      Soru 6'da kaldim.
+     Soru 14'da kaldim. (08.09.2024)
+    
