@@ -184,10 +184,28 @@ Kubernetes/Documentation/Tasks altinda bicok faydali pratik bilgiler yer aliyor
     emptyDir veya benzer geçici hacim türleri bu tür senaryolarda kullanılır. Buradaki volume onemli, persistent degil gecici volume.
     environment variable icin MY_NODE_NAME ifadesini dokumatasyonda aratince cikiyor
 
+25. soru 14 - Find out Cluster Information
+    ezberleyerek ogrenmeye calis, cevaplara bak
+
+26. soru 15 - Cluster Event Logging
+    `kubectl get events -A --sort-by=.metadata.creationTimestamp`
+    `crictl ps`
+    `crictl rm`
+
+27. soru 16 - Namespaces and Api Resources
+    `k api-resources -h`
+    `k api-resources --namespaced -o name > /opt/course/16/resources.txt`
+
+28. soru 17 - Find Container of Pod and check info
+    bu ve bir onceki 16. soruda `crictl` komutlari onemli
+    `crictl inspect CONTAINER_ID`
+    `crictl logs CONTAINER_ID`
+    containerlari listelediginde bulundugun node'daki tum containerlari listeliyor, bu yuzden dogru node'a ssh baglantisi yapmalisin.
 
 
 NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
 
      Soru 6'da kaldim.
      Soru 14'da kaldim. (08.09.2024)
+     Soru 18'de kaldim. (09.09.2024)
     
