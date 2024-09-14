@@ -202,10 +202,19 @@ Kubernetes/Documentation/Tasks altinda bicok faydali pratik bilgiler yer aliyor
     `crictl logs CONTAINER_ID`
     containerlari listelediginde bulundugun node'daki tum containerlari listeliyor, bu yuzden dogru node'a ssh baglantisi yapmalisin.
 
+29. soru 18 - Fix Kubelet
+    `service kubelet status`
+    `service kubelet start`
+
+30. soru 19 - Create Secret and mount into Pod
+
+    kubernetes.io/docs/tasks/inject-data-application
+
+31. soru 20 - Update Kubernetes Version and join cluster
 
 NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
 
      Soru 6'da kaldim.
      Soru 14'da kaldim. (08.09.2024)
      Soru 18'de kaldim. (09.09.2024)
-    
+     soru 20'de kaldim. (14.08.2024)    
