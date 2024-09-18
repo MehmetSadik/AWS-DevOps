@@ -210,7 +210,13 @@ Kubernetes/Documentation/Tasks altinda bicok faydali pratik bilgiler yer aliyor
 
     kubernetes.io/docs/tasks/inject-data-application
 
-31. soru 20 - Update Kubernetes Version and join cluster
+31. soru 20 - Update Kubernetes Version and join cluster (18.09.2024)
+
+tekrar bak, version guncellemeyi dokumantasyondan bakarak yapabiliyorsun ama join icim exam-simulators cevabina bak.
+
+32. soru 21 - Create a Static Pod and Service 
+
+
 
 NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
 
