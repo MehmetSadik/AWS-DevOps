@@ -214,9 +214,23 @@ Kubernetes/Documentation/Tasks altinda bicok faydali pratik bilgiler yer aliyor
 
 tekrar bak, version guncellemeyi dokumantasyondan bakarak yapabiliyorsun ama join icim exam-simulators cevabina bak.
 
+`kubeadm token create --print-join-command` in controlplane
+
 32. soru 21 - Create a Static Pod and Service 
 
+--dry-run=client seklinde olmali, onemli, yazim hatasi olursa sacma sapan bir pod olusturuluyor
 
+33. soru 22 - Check how long certificates are valid
+
+`kubeadm certs check-expiration` -h flag'i ile `renew`gibi diger komutlarla ilgili bilgi alinabilir
+
+34. soru 23 - Kubelet client/server cert info
+
+    soru 22 ile ayni
+
+35. soru 24 - NetworkPolicy (19.08.2024)
+
+Dokumandan bakilabilir `docs/concepts/services-networking/network-policies/`
 
 NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
 
