@@ -231,6 +231,11 @@ tekrar bak, version guncellemeyi dokumantasyondan bakarak yapabiliyorsun ama joi
 35. soru 24 - NetworkPolicy (19.08.2024)
 
 Dokumandan bakilabilir `docs/concepts/services-networking/network-policies/`
+Mantigini anlamak onemli, olay tamamen pod label'lari uzerinden donuyor, label olarak name de kullanilabilir.
+
+36. soru 25 - Etcd Snapshot Save and Restore
+
+kisa bir tekrar yap, ozellikle manifest dosyalarinin tasinmasi olayi onemli
 
 NOT: CKA Simulator test sorulari icin yeniden tekrara basladim (17.06.2024)
 
